@@ -1,0 +1,26 @@
+name: Windows EXE
+
+on: [push, pull_request, workflow_dispatch]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - run: python -m unittest -v
+      - run: python -m PyInstaller --noconfirm BPM-Meter.spec
+      - uses: actions/upload-artifact@v7
+        with:
+          name: BPM-Meter-Windows-x64
+          path: |
+            dist/BPM-Meter.exe
+            THIRD_PARTY_NOTICES.txt
+          if-no-files-found: error

@@ -1,0 +1,8 @@
+BPM Meter korzysta z bibliotek librosa, NumPy, wxPython i PyAV.
+
+PyAV korzysta ze współdzielonych bibliotek FFmpeg na licencji GNU LGPL 3 lub nowszej.
+Kod źródłowy FFmpeg: https://github.com/FFmpeg/FFmpeg/tree/n9.0.2
+Źródła i sposób budowania pakietu PyAV: https://github.com/PyAV-Org/PyAV/tree/v19.0.2
+Treść licencji LGPL 3: https://www.gnu.org/licenses/lgpl-3.0.html
+
+Teksty licencji pakietów są również dołączone do pliku wykonywalnego w katalogu licenses.
