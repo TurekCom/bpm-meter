@@ -11,7 +11,7 @@ git add --update
 if ($LASTEXITCODE -ne 0) { throw 'Nie udało się przygotować zmian.' }
 git diff --cached --quiet
 if ($LASTEXITCODE -eq 1) {
-    '' | git commit --allow-empty-message --file=-
+    git commit --allow-empty-message --file=NUL
     if ($LASTEXITCODE -ne 0) { throw 'Nie udało się utworzyć commitu.' }
 } elseif ($LASTEXITCODE -ne 0) {
     throw 'Nie udało się sprawdzić zmian.'
